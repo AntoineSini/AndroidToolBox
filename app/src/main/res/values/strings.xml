@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">AndroidToolBox</string>
+    <string name="Connection">Connexion</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">*********</string>
+    <string name="login">Identifiant</string>
+    <string name="password">Mot de passe</string>
+    <string name="hello">Bonjour</string>
+    <string name="lifecycle">Cycle de vie</string>
+    <string name="permisssions">Permissions</string>
+    <string name="save">Sauvegarde</string>
+    <string name="Webservices">Webservices</string>
+
 </resources>
