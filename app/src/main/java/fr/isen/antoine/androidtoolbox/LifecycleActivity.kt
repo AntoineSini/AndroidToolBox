@@ -2,7 +2,6 @@ package fr.isen.antoine.androidtoolbox
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_lifecycle.*
@@ -15,7 +14,6 @@ class LifecycleActivity : AppCompatActivity(), LifecycleFragment.OnFragmentInter
 
         lifecycleTextView.text = "onCreate\n"
         var cpt: Int = 0
-
         swipeFragmentButton.setOnClickListener{
             var newFragment : Fragment? = null
             newFragment = if(cpt%2 ==0) SwipeFragment() else LifecycleFragment()
