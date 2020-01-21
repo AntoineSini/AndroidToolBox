@@ -11,5 +11,7 @@
     <string name="permisssions">Permissions</string>
     <string name="save">Sauvegarde</string>
     <string name="Webservices">Webservices</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="swipe">Changer de fragment</string>
 
 </resources>

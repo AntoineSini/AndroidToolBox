@@ -7,15 +7,42 @@
     tools:context=".LifecycleActivity">
 
     <TextView
-        android:id="@+id/lifecycleView"
+        android:id="@+id/lifecycleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="144dp"
-        android:text="TextView"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="158dp"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <fragment
+        android:id="@+id/lifecycleFragment"
+        android:name="fr.isen.antoine.androidtoolbox.LifecycleFragment"
+        android:layout_width="267dp"
+        android:layout_height="379dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="115dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lifecycleTextView" />
+
+    <Button
+        android:id="@+id/swipeFragmentButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="123dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="80dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/swipe"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
