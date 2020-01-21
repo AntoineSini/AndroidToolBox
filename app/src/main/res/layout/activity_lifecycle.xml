@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <fragment
-        android:id="@+id/lifecycleFragment"
+        android:id="@+id/fragmentContainer"
         android:name="fr.isen.antoine.androidtoolbox.LifecycleFragment"
         android:layout_width="267dp"
         android:layout_height="379dp"

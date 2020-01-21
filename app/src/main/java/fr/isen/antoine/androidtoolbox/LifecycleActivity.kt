@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_lifecycle.*
 
 class LifecycleActivity : AppCompatActivity(), LifecycleFragment.OnFragmentInteractionListener {
@@ -13,9 +14,13 @@ class LifecycleActivity : AppCompatActivity(), LifecycleFragment.OnFragmentInter
         setContentView(R.layout.activity_lifecycle)
 
         lifecycleTextView.text = "onCreate\n"
+        var cpt: Int = 0
 
         swipeFragmentButton.setOnClickListener{
-
+            var newFragment : Fragment? = null
+            newFragment = if(cpt%2 ==0) SwipeFragment() else LifecycleFragment()
+            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, newFragment).commit()
+            cpt++
         }
         //Log.d("antoine", "onCreate")
     }

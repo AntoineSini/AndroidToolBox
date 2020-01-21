@@ -87,8 +87,6 @@ class LifecycleFragment : Fragment() {
         Log.d("antoine", "onDestroyView")
     }
 
-    var fragment : Fragment? = null
-
 
     /**
      * This interface must be implemented by activities that contain this
