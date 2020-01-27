@@ -17,6 +17,10 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, LifecycleActivity::class.java)
             startActivity(intent)
         }
+        saveButton.setOnClickListener{
+            val intent = Intent(this, FormActivity::class.java)
+            startActivity(intent)
+        }
         deconnectButton.setOnClickListener{
             val sharedPref: SharedPreferences = getSharedPreferences("logpwd", Context.MODE_PRIVATE)
             val editor = sharedPref.edit()
