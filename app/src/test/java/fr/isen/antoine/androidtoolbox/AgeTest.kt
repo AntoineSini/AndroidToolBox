@@ -10,7 +10,6 @@ class AgeTest {
         val sut = FormActivity()
         val formatter = SimpleDateFormat("dd/MM/yyyy")
         sut.currentDate = formatter.parse("27/01/2020")
-
         return sut
     }
 
@@ -21,6 +20,7 @@ class AgeTest {
         //Then
         assertEquals(20,sut.getAge(1,0,2000))
     }
+
     @Test
     fun getAgeMonthTest(){
         //Given
@@ -34,6 +34,6 @@ class AgeTest {
         //Given
         val sut = setup()
 
-        assertEquals(20,sut.getAge(26,0,2000))
+        assertEquals(30,sut.getAge(1,0,1990))
     }
 }

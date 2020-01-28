@@ -53,11 +53,19 @@ class FormActivity : AppCompatActivity() {
         val file = File(cacheDir.absolutePath+"/jsonfile.json")
         val json = JSONObject(file.readText())
         val builder = AlertDialog.Builder(this)
+        val birthday = json.get("birthday").toString()
+        val component = birthday.split("/")
+
+        val day = component[0].toInt()
+        val month = component[1].toInt()
+        val year = component[2].toInt()
+
         with(builder)
         {
             setTitle("ALERTE JSON")
             setMessage("Vous êtes ${json.get("firstname")}" +
-                    " ${json.get("surname")} né(e) le ${json.get("birthday")}")
+                    " ${json.get("surname")} né(e) le ${json.get("birthday")}" +
+                    " vous avez donc ${getAge(day,month-1,year)} ans")
             show()
         }
     }
