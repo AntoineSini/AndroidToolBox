@@ -21,6 +21,10 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, FormActivity::class.java)
             startActivity(intent)
         }
+        permissionsButton.setOnClickListener{
+            val intent = Intent(this, InfosActivity::class.java)
+            startActivity(intent)
+        }
         deconnectButton.setOnClickListener{
             val sharedPref: SharedPreferences = getSharedPreferences("logpwd", Context.MODE_PRIVATE)
             val editor = sharedPref.edit()

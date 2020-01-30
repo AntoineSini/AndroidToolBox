@@ -20,5 +20,6 @@
     <string name="surname">Nom</string>
     <string name="dateofbirth">Date de naissance</string>
     <string name="validate">Valider</string>
+    <string name="infosTitle">Accès aux informations Android</string>
 
 </resources>
