@@ -25,6 +25,10 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, InfosActivity::class.java)
             startActivity(intent)
         }
+        WebServicesButton.setOnClickListener{
+            val intent = Intent(this, WebServicesActivity::class.java)
+            startActivity(intent)
+        }
         deconnectButton.setOnClickListener{
             val sharedPref: SharedPreferences = getSharedPreferences("logpwd", Context.MODE_PRIVATE)
             val editor = sharedPref.edit()

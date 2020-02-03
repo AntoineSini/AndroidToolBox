@@ -4,45 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@color/colorPrimaryDark">
+    android:orientation="vertical">
 
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/textTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintStart_toEndOf="@+id/imageRandomUser"
+        app:layout_constraintTop_toTopOf="@+id/imageRandomUser" />
 
     <TextView
-        android:id="@+id/firstname"
+        android:id="@+id/textBot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/imageView3" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageRandomUser"
+        app:layout_constraintStart_toEndOf="@+id/imageRandomUser" />
 
     <TextView
-        android:id="@+id/phone"
+        android:id="@+id/textMiddle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/firstname"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintBottom_toTopOf="@+id/textBot"
+        app:layout_constraintStart_toEndOf="@+id/imageRandomUser"
+        app:layout_constraintTop_toBottomOf="@+id/textTop" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/imageRandomUser"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"

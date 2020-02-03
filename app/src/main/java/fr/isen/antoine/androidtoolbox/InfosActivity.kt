@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -19,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_infos.*
 import android.location.LocationManager
 import android.location.Location
 import android.location.LocationListener
+import fr.isen.antoine.androidtoolbox.classes.ContactModel
 
 
 class InfosActivity : AppCompatActivity(), LocationListener {
@@ -71,7 +71,7 @@ class InfosActivity : AppCompatActivity(), LocationListener {
             contactList.add(contactModel)
         }
         contactRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        val adapter = RecyclerAdapter(contacts = contactList)
+        val adapter = RecyclerAdapterContact(content = contactList)
         contactRecycler.adapter = adapter
     }
 
