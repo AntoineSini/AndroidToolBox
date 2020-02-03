@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.single_item_recycler.view.*
 import java.util.zip.Inflater
 
-class RecyclerAdapter(val contacts: List<String>): RecyclerView.Adapter<RecyclerAdapter.ContactViewHolder>() {
+class RecyclerAdapter(val contacts: ArrayList<ContactModel>): RecyclerView.Adapter<RecyclerAdapter.ContactViewHolder>() {
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
-        holder.bind(contacts[position])
+        holder.bind(contacts[position].displayName)
     }
 
     override fun getItemCount(): Int {
@@ -22,7 +22,7 @@ class RecyclerAdapter(val contacts: List<String>): RecyclerView.Adapter<Recycler
         return ContactViewHolder(view)
     }
     class ContactViewHolder(val view: View) : RecyclerView.ViewHolder(view){
-        fun bind(contact: String){
+        fun bind(contact: String?){
             view.name.text = contact
         }
     }
