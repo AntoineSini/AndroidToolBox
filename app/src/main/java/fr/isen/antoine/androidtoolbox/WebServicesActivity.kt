@@ -1,5 +1,6 @@
 package fr.isen.antoine.androidtoolbox
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,16 +12,15 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 import fr.isen.antoine.androidtoolbox.classes.RandomUserModel
+import fr.isen.antoine.androidtoolbox.classes.UserModel
 import kotlinx.android.synthetic.main.activity_infos.*
 import kotlinx.android.synthetic.main.activity_web_services.*
 
-class WebServicesActivity : AppCompatActivity() {
+class WebServicesActivity : AppCompatActivity(), RecyclerAdapterRUM.OnUserRecycleListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_web_services)
-
-
         requestAPI()
     }
 
@@ -35,7 +35,7 @@ class WebServicesActivity : AppCompatActivity() {
             Request.Method.GET, url,
             Response.Listener<String> { response ->
                 val RUM = Gson().fromJson(response, RandomUserModel::class.java)
-                val adapter = RecyclerAdapterRUM(content = RUM)
+                val adapter = RecyclerAdapterRUM(content = RUM, listener = this)
                 RandomUsersRecycler.adapter = adapter
             },
             Response.ErrorListener {
@@ -43,5 +43,12 @@ class WebServicesActivity : AppCompatActivity() {
             })
         // Add the request to the RequestQueue.
         queue.add(stringRequest)
+    }
+
+    override fun onSelectUser(user: UserModel?) {
+        val intent = Intent(this, DetailsActivity::class.java)
+        val jsonString = Gson().toJson(user)
+        intent.putExtra("14", jsonString)
+        startActivity(intent)
     }
 }

@@ -10,7 +10,7 @@ import fr.isen.antoine.androidtoolbox.classes.RandomUserModel
 import fr.isen.antoine.androidtoolbox.classes.UserModel
 import kotlinx.android.synthetic.main.single_item_recycler.view.*
 
-class RecyclerAdapterRUM(val content: RandomUserModel): RecyclerView.Adapter<RecyclerAdapterRUM.ContactViewHolder>() {
+class RecyclerAdapterRUM(val content: RandomUserModel, val listener: OnUserRecycleListener): RecyclerView.Adapter<RecyclerAdapterRUM.ContactViewHolder>() {
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
         content.results?.let {
             holder.bind(it[position])
@@ -23,6 +23,9 @@ class RecyclerAdapterRUM(val content: RandomUserModel): RecyclerView.Adapter<Rec
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.single_item_recycler, parent,false) as View
+        view.setOnClickListener{
+            listener.onSelectUser(it.tag as? UserModel)
+        }
         return ContactViewHolder(view)
     }
     class ContactViewHolder(val view: View) : RecyclerView.ViewHolder(view){
@@ -31,8 +34,12 @@ class RecyclerAdapterRUM(val content: RandomUserModel): RecyclerView.Adapter<Rec
             view.textMiddle.text = "${content?.location?.street?.number} ${content?.location?.street?.name}" +
                     " ${content?.location?.city}, ${content?.location?.country}"
             view.textBot.text = "${content?.email}"
-            Picasso.get().load("${content?.picture?.large}").into(view.imageRandomUser);
+            Picasso.get().load("${content?.picture?.large}").into(view.imageRandomUser)
+            view.tag = content
 
         }
+    }
+    interface OnUserRecycleListener{
+        fun onSelectUser(user: UserModel?)
     }
 }
